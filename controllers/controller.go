@@ -21,6 +21,13 @@ func CriaNovoAluno(c *gin.Context) {
 			"error": err.Error()})
 		return
 	}
+	err := models.ValidateFields(&aluno)
+	
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err.Error()})
+		return
+	}
 	database.DB.Create(&aluno)
 	c.JSON(http.StatusOK, aluno)
 }
