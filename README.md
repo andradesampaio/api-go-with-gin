@@ -19,7 +19,7 @@ Go e Gin: Criando API rest com simplicidade
 1. Clone este repositório para a sua máquina local.
 2. Navegue até o diretório do projeto.
 3. Antes de iniciar a aplicação, é necessário criar o banco de dados. Para isso, navegue até a pasta `infra` e execute `docker-compose up`.
-4. O script de inicialização irá criar a tabela `personalidade` e inserir 10 registros de personalidades da Marvel.
+4. O script de inicialização irá criar a tabela `personalidade` e inserir 10 registros.
 
 ## Acessando o Banco de Dados
 
