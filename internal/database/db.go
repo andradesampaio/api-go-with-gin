@@ -2,8 +2,7 @@ package database
 
 import (
 	"log"
-
-	"github.com/andradesampaio/api-rest-go-with-gin/models"
+	"api-go-with-gin/internal/model"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -13,11 +12,11 @@ var (
 	err error
 )
 
-func ConectaComBancoDeDados() {
-	stringDeConexao := "host=localhost user=root password=root dbname=root port=5432 sslmode=disable"
+func Connect() {
+	stringDeConexao := "host=localhost user=root password=root dbname=mydatabase port=5432 sslmode=disable"
 	DB, err = gorm.Open(postgres.Open(stringDeConexao))
 	if err != nil {
 		log.Panic("Erro ao conectar com banco de dados")
 	}
-	DB.AutoMigrate(&models.Aluno{})
+	DB.AutoMigrate(&model.Aluno{})
 }
